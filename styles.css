@@ -64,9 +64,55 @@ p {
   cursor: pointer;
 }
 
+.btn-filled {
+  border: 0;
+  background-color: lightblue;
+  border: 2px solid black;
+  border-radius: 1em;
+  padding: 10px;
+  box-shadow: 5px 5px;
+  transition: background-color 0.5s;
+}
+
+.btn-filled:hover {
+  cursor: pointer;
+  background-color: lightsteelblue;
+}
+
+.btn-outline {
+  border: 2px solid black;
+  background-color: transparent;
+  border-radius: 1em;
+  padding: 10px;
+  box-shadow: 5px 5px;
+  transition: background-color 0.5s;
+}
+
+.btn-outline:hover {
+  cursor: pointer;
+  background-color: lightblue;
+}
+
 .socs-container {
   display: flex;
   gap: 15px;
+}
+
+.form-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-field {
+  padding: 5px 10px;
 }
 
 @media (max-width: 768px) {
@@ -77,5 +123,11 @@ p {
 
   .socs-container {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    width: 100%;
   }
 }

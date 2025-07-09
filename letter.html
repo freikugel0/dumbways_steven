@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Hoshimachi Suisei | Porto</title>
+  </head>
+  <body>
+    <div class="root">
+      <div class="container dm-sans" style="flex-direction: column">
+        <form class="form-container" method="post">
+          <div style="display: flex; gap: 20px; align-items: center">
+            <img
+              class="btn-icon"
+              src="./icons/chevron-left.svg"
+              onclick="window.location.href = './index.html'"
+            />
+            <h1>Send Letter</h1>
+          </div>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input
+              class="input-field"
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Insert name"
+            />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input
+              class="input-field"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Insert email"
+            />
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input
+              class="input-field"
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="Insert phone number"
+            />
+          </div>
+          <div class="form-field">
+            <label for="subject">Subject</label>
+            <input
+              class="input-field"
+              id="subject"
+              name="subject"
+              type="text"
+              placeholder="Insert subject"
+            />
+          </div>
+          <div class="form-field">
+            <label for="message">Your Message</label>
+            <textarea
+              class="input-field"
+              style="padding: 10px"
+              id="message"
+              name="message"
+              type="text"
+              placeholder="Type your message..."
+            ></textarea>
+          </div>
+          <div style="display: flex; gap: 10px; justify-content: center">
+            <button type="reset" class="btn-outline">Reset</button>
+            <button type="submit" class="btn-filled">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
