@@ -7,10 +7,11 @@ Each task is organized into a dedicated **Git branch**, based on daily task.
 
 ## Branch Overview
 
-| Branch Name   | Description                       |
-| ------------- | --------------------------------- |
-| `day_1_and_2` | Simple Porto with HTML and CSS    |
-| `main`        | Documentation and navigation only |
+| Branch Name | Description                       |
+| ----------- | --------------------------------- |
+| `porto`     | Simple Porto with HTML and CSS    |
+|             | Day 1, 2, and 3                   |
+| `master`    | Documentation and navigation only |
 
 ---
 
