@@ -35,7 +35,7 @@ p {
   width: 65%;
 }
 
-.card {
+.profile-card {
   display: flex;
   flex-direction: column;
   width: min-content;
@@ -93,6 +93,20 @@ p {
   background-color: lightblue;
 }
 
+.btn-outline-delete {
+  border: 2px solid black;
+  background-color: transparent;
+  border-radius: 1em;
+  padding: 10px;
+  box-shadow: 5px 5px;
+  transition: background-color 0.5s;
+}
+
+.btn-outline-delete:hover {
+  cursor: pointer;
+  background-color: lightcoral;
+}
+
 .socs-container {
   display: flex;
   gap: 15px;
@@ -111,8 +125,85 @@ p {
   gap: 10px;
 }
 
+.form-field-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 .input-field {
   padding: 5px 10px;
+}
+
+.letter-card-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
+
+.card {
+  max-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px black;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 6969;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  width: 50%;
+  max-height: 50%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px black;
+  display: flex;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-bottom: auto;
 }
 
 @media (max-width: 768px) {
@@ -128,6 +219,6 @@ p {
 
 @media (max-width: 480px) {
   .form-container {
-    width: 100%;
+    width: 90%;
   }
 }
