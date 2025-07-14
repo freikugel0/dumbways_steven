@@ -10,7 +10,7 @@ Each task is organized into a dedicated **Git branch**, based on daily task.
 | Branch Name  | Description                       |
 | ------------ | --------------------------------- |
 | `task/porto` | Simple Porto with HTML, CSS, JS   |
-|              | Day 1, 2, 3, and 4                |
+|              | Day 1, 2, 3, 4, and 5             |
 | `master`     | Documentation and navigation only |
 
 ---
@@ -24,5 +24,5 @@ Each task is organized into a dedicated **Git branch**, based on daily task.
    ```
 2. **Checkout to branch task**
    ```bash
-   git checkout task/day_1_and_2
+   git checkout task/porto
    ```
