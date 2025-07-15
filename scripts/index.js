@@ -124,6 +124,24 @@ function closeModal() {
 
 function rerenderLetterContainer() {
   const currentLetters = getCurrentLetters();
+
+  // flush innerHTML container
+  letterCardContainer.innerHTML = "";
+
+  // day 5: using for loop to render
+  // for (let i = 0; i < currentLetters.length; i++) {
+  //   letterCardContainer.innerHTML += renderCard(
+  //     currentLetters[i].id,
+  //     currentLetters[i].name,
+  //     currentLetters[i].email,
+  //     currentLetters[i].phone,
+  //     currentLetters[i].subject,
+  //     currentLetters[i].message,
+  //     currentLetters[i].emoji
+  //   );
+  // }
+
+  // day 6: using hof to render
   const cards = currentLetters.map((letter) => {
     return renderCard(
       letter.id,
@@ -135,7 +153,6 @@ function rerenderLetterContainer() {
       letter.emoji
     );
   });
-
   letterCardContainer.innerHTML = cards.join("");
 
   if (letterCardContainer.innerHTML != "") {
@@ -144,6 +161,7 @@ function rerenderLetterContainer() {
     container2.style.display = "none";
   }
 
+  // truncating text helper (cause css can't handle multiline clipping)
   const truncates = document.querySelectorAll(".truncate");
   truncates.forEach((t) => {
     const raw = t.innerText;
