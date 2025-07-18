@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="styles/output.css" />
     <title>Hoshimachi Suisei | Porto</title>
   </head>
   <body>
-    <div class="root">
-      <div class="container dm-sans">
-        <div style="display: flex; flex-direction: column; gap: 15px">
-          <h1>Suichannnnnnnnnn</h1>
-          <p style="text-align: justify">
+    <div class="w-full min-h-screen flex justify-center items-center">
+      <div
+        class="w-full md:w-8/12 lg:w-7/12 flex flex-col md:flex-row items-center md:items-start gap-4 p-6 md:p-0"
+      >
+        <div class="flex flex-col gap-4">
+          <h1 class="text-3xl font-bold">Suichannnnnnnnnn</h1>
+          <p class="text-justify">
             Hoshimachi Suisei (星街すいせい) is a female Japanese Virtual
             YouTuber associated with hololive. Originally an independent VTuber
             who eventually was recruited into hololive production's label
@@ -21,68 +23,42 @@
           </p>
           <button
             class="btn-outline"
-            onclick="window.location.href = './letter.html'"
+            onclick="window.location.href = '/letter'"
           >
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-              "
-            >
-              Send Letter <img src="icons/heart.svg" width="25px" />
+            <div class="flex justify-center items-center gap-3">
+              Send Letter <img src="imgs/icons/heart.svg" width="25px" />
             </div>
           </button>
-          <div style="display: flex; align-items: center">
+          <div class="flex justify-center md:justify-start items-center">
             <button class="btn-brand">
-              <img src="icons/hololive.png" width="150px" />
+              <img src="imgs/icons/hololive.png" width="150px" />
             </button>
             <button class="btn-brand">
-              <img src="icons/innk.png" width="150px" />
+              <img src="imgs/icons/innk.png" width="150px" />
             </button>
           </div>
-          <div class="socs-container">
+          <div class="flex justify-center md:justify-start gap-4">
             <button class="btn-icon" onclick="socsClick('x')">
-              <img src="icons/x.svg" width="30px" />
+              <img src="imgs/icons/x.svg" width="30px" />
             </button>
             <button class="btn-icon" onclick="socsClick('youtube')">
-              <img src="icons/youtube.svg" width="30px" />
+              <img src="imgs/icons/youtube.svg" width="30px" />
             </button>
             <button class="btn-icon" onclick="socsClick('spotify')">
-              <img src="icons/spotify.svg" width="30px" />
+              <img src="imgs/icons/spotify.svg" width="30px" />
             </button>
           </div>
         </div>
         <div>
-          <div class="profile-card">
+          <div
+            class="flex flex-col w-[200px] bg-white shadow-2xl rounded-2xl overflow-hidden"
+          >
             <img src="imgs/suisei.gif" width="300px" />
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: 1em;
-                padding: 1.5em;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                "
-              >
-                <h3>Hoshimachi Suisei</h3>
+            <div class="flex flex-col gap-2 p-4">
+              <div class="flex flex-col">
+                <h3 class="text-xl font-bold">Hoshimachi Suisei</h3>
                 <p>星街すいせい</p>
-                <div
-                  style="
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 1em;
-                    padding-top: 10px;
-                  "
-                >
+                <div class="flex flex-wrap gap-2 pt-3">
                   <span class="badge">VSinger</span>
                   <span class="badge">VTuber</span>
                 </div>
