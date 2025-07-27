@@ -1,10 +1,58 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{title}}</title>
-  </head>
-  <body>
-    <h1>{{message}}</h1>
-  </body>
-</html>
+<div class="flex flex-col items-center gap-4 p-4 w-full">
+  <form enctype="multipart/form-data" action="/posts" method="post" class="flex flex-col w-full md:w-2xl border border-gray-300 rounded-md p-4 gap-2">
+    <input name="title" placeholder="Title" class="p-2" />
+    <textarea name="content" placeholder="What's on your mind?" class="p-2"></textarea>
+    <input class="border border-gray-300 rounded p-2" type="file" name="attachment" accept="image/*" />
+    {{#if error}}
+      <p class="text-red-500">{{error}}</p>
+    {{/if}}
+    <button
+      type="submit"
+      class="p-2 ml-auto bg-gray-300 rounded cursor-pointer"
+    >New Post</button>
+  </form>
+  {{#if search.keyword}}
+    <p>Showing {{search.count}} result of: <span class="font-semibold">{{search.keyword}}</span></p>
+  {{/if}}
+  <div class="flex flex-col w-full md:w-lg gap-4">
+    {{#each posts}}
+      <div class="flex flex-col gap-2 p-4 shadow-md rounded">
+        <div class="flex justify-between text-sm text-gray-500">
+          <p>{{this.username}}
+            {{#ifEquals this.user_id ../currentUser.id}}
+              <span>(You)</span>
+            {{/ifEquals}}</p>
+          <p>{{formatDate this.created_at}}</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <img class="p-4 overflow-hidden" src="/{{this.attachment}}" />
+          <div class="flex gap-2">
+            <p>></p>
+            <h1 class="font-semibold">{{this.title}}</h1>
+          </div>
+          <textarea class="border border-gray-300 rounded p-2 h-48" disabled>{{this.content}}</textarea>
+        </div>
+        <div class="flex justify-between items-center">
+          {{#ifEquals this.user_id ../currentUser.id}}
+            <div class="flex gap-4 items-center">
+              <button onclick="handleDelete('{{../this.id}}')" type="button" class="size-5 cursor-pointer"><img src="/icons/trash.svg" /></button>
+              <button onclick="window.location.href = '/posts/{{../this.id}}/edit'" type="submit" class="size-5 cursor-pointer"><img src="/icons/pencil.svg" /></button>
+            </div>
+          {{/ifEquals}}</p>
+          <div class="flex items-center">
+            <form action="/posts/{{this.id}}/vote" method="post">
+              <input type="hidden" name="vote" value="1" />
+              <button type="submit" class="flex gap-1 items-center px-2 py-1 rounded-md cursor-pointer hover:bg-gray-100"><img src="/icons/arrow-big-up-dash.svg" />{{this.upvotes}}</button>
+            </form>
+            <form action="/posts/{{this.id}}/vote" method="post">
+              <input type="hidden" name="vote" value="-1" />
+              <button type="submit" class="flex gap-1 items-center px-2 py-1 rounded-md cursor-pointer hover:bg-gray-100"><img src="/icons/arrow-big-down-dash.svg" />{{this.downvotes}}</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+<script src="/js/home.js"></script>

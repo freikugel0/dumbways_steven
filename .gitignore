@@ -40,3 +40,5 @@ package-lock.json yarn.lock # (opsional, kalau kamu gak mau lock file ikut di-Gi
 
 # Optional: untuk file lokal dev tools
 *.local
+
+uploads

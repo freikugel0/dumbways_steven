@@ -1,0 +1,48 @@
+<div class="flex justify-center items-center w-full min-h-screen">
+  <div class="flex flex-col gap-4 w-md">
+    <h1 class="text-3xl">User Registration</h1>
+    <form class="flex flex-col gap-4" action="/register" method="post">
+      {{#if error}}
+        <p class="text-red-500">{{error}}</p>
+      {{/if}}
+      <div class="flex flex-col gap-2">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          name="username"
+          class="border rounded p-2"
+          type="text"
+          placeholder="Insert your username..."
+        />
+        <p class="text-sm text-gray-500">Username must be less than 100
+          characters</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          class="border rounded p-2"
+          type="password"
+          placeholder="Insert your password..."
+        />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="password-confirm">Confirm Password</label>
+        <input
+          id="password-confirm"
+          name="password_confirm"
+          class="border rounded p-2"
+          type="password"
+          placeholder="Confirm your password..."
+        />
+      </div>
+      <button
+        type="submit"
+        class="p-2 bg-gray-300 rounded cursor-pointer"
+      >Submit</button>
+    </form>
+    <p class="text-center">Already have an account?
+      <a href="/login" class="text-blue-500 underline">Login</a></p>
+  </div>
+</div>

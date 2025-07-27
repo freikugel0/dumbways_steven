@@ -11,7 +11,11 @@
    git checkout task/express
    npm install
    ```
-3. **Run express server**
+3. **Run express server (Day 7)**
    ```bash
    npm start
+   ```
+   **Run express server (Day 12, 13, 14)**
+   ```bash
+   npm run dev
    ```

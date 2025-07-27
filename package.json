@@ -4,17 +4,43 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "dev": "concurrently \"nodemon\" \"npm run tailwind\"",
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "tailwind": "tailwindcss -i src/input.css -o public/style.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-flash": "^0.1.1",
+    "connect-pg-simple": "^10.0.0",
+    "date-fns": "^4.1.0",
     "express": "^5.1.0",
-    "hbs": "^4.2.0"
+    "express-handlebars": "^8.0.3",
+    "express-session": "^1.18.2",
+    "kysely": "^0.28.3",
+    "multer": "^2.0.2",
+    "pg": "^8.16.3",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@tailwindcss/cli": "^4.1.11",
+    "@types/bcrypt": "^6.0.0",
+    "@types/connect-flash": "^0.0.40",
+    "@types/connect-pg-simple": "^7.0.3",
+    "@types/express": "^5.0.3",
+    "@types/express-handlebars": "^5.3.1",
+    "@types/express-session": "^1.18.2",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.1.0",
+    "@types/pg": "^8.15.4",
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10",
+    "tailwindcss": "^4.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
